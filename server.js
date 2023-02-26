@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING, function(err){
     }
     else{
         console.log("db connected")
-        app.listen(3002, function () {
+        app.listen(3000, function () {
             console.log("Server listening on port http://localhost:3002/")
         });
     }
