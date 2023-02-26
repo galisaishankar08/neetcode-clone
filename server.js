@@ -13,6 +13,7 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + "/frontend/index.html");
 })
 
+mongoose.set("strictQuery", false)
 mongoose.connect(process.env.MONGO_CONNECTION_STRING, function(err){
     if(err) {
         console.error("Error")
