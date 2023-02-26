@@ -16,3 +16,14 @@ module.exports.createFirstCourse = async function(){
         await course.save();
     }
 }
+
+module.exports.createCourse = async function(CourseInput){
+    const course = new courseModel(CourseInput);
+    await course.save();
+}
+
+module.exports.createCourse = async function(courseId, UpdateInput){
+    await courseModel.findOneAndUpdate({_id: courseId, updatedInput: UpdateInput});
+    const course = new courseModel(CourseInput);
+    await course.save();
+}
