@@ -2,12 +2,10 @@ const express = require('express');
 
 const app = express();
 
-app.get("/", function(req, res) {
-    res.send("Hello, world!");
-})
+app.use(express.static("frontend"))
 
-app.get("/getmyname", function(req, res) {
-    res.send("SAI SHANKAR");
+app.get("/", function(req, res) {
+    res.sendFile(__dirname + "/frontend/index.html");
 })
 
 app.listen(3002, function () {
